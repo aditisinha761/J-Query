@@ -1,0 +1,92 @@
+Jquery is the shortform of Javascript...it is used to shorten our code..
+---------------------JQUERY------------------------
+1- Before using JQUERY in our file first we have to copy the CDN(Content Delievery Network) and paste it in our file just above the link of Javascript file.. it is also written in the last of body tag..
+
+2- document.querySelector("h1").style.color = "red"; // this code is in Javascript 
+ THe above code is written in Jquery as:
+ $("h1").css("color","red");           or     Jquery("h1").css("color","red");
+
+3- if we paste CDN link and Javascript file in the head then we have to write:
+$(document).ready(function(){
+    $("h1").css("color","red");
+});// we dont have to paste CDN link in body instead of using this ready function.
+
+4- Selecting element in JQUERY:-
+For selecting any element we write:
+$("h1"); this select the h1 element .
+but if we want to select all then in Javascript we write: document.querySelectorAll("button"); but in Jquery we have to write : $("button"); // this will select all button element.
+
+5- Manipulating Styles with JQUERY:-
+console.log($("h1").css("font-size")); // this will print the value of font size 
+but if we give two parameters:-
+$("h1").css("color","red"); // it will change the style of h1 and change the text color in red. i.e you are setting the value.
+If you want to add class in any element then:
+$("h1").addClass("big-text"); // this add big-text class in h1 element 
+we can add two class also : $("h1").addClass("big-text margin-50");// this add big-text as well as margin-50 class in h1 element
+If you want to remove class from any element then:
+$("h1").removeClass("big-text"); // this remove big-text class from h1 element
+If we want to check whether a given class is present or applied in an element then we write:
+$("h1").hasClass("big-text"); // this will give boolean value
+
+6- Manipulating text with JQUERY:-
+If we want to change text from a given element then we write:
+$("h1").text("byee"); // this will update the value of text to byee.
+If we want to add change any html from a given element then we write:
+$("h1").html("<em>byee</em>"); // this will update the html in h1 
+
+7- Manipulating attributes using JQUERY:-
+if we want to get the value of attribute then:
+console.log($("img").attr("src"));
+if we want to set the value of attribute then:
+$("a").attr("href","www.yahoo.com");
+if we want to get the value of  class attribute then:
+console.log($("h1 ").attr("class"));
+
+8- Adding EventLISTENERS with JQUERY :-
+in Jquery we dont have to use loop coz $(button) can select all the button present in file
+$("button").click(function(){
+    $("h1").css("color","purple");
+});
+if we want event occur while key is pressed then:
+$("input").keypress(function(event){
+    console.log(event.key); // this will print which key is pressed 
+});
+Second way to add EventLISTENERS is:
+$("h1").on("mouseover",function(){
+    $("h1").css("color","red");
+});
+
+9- Adding and Removing Elents with Jquery:-
+if we want to add element before any element then:
+$("h1").before("<button>new</button>");
+if we want to add element after any element then:
+$("h1").after("<button>new</button>");
+if we want to add element into the element then :
+$("h1").prepend("<button>new</button>"); // it will add the element before the the content of h1 in that selected tag.
+$("h1").append("<button>new</button>"); // it will add the element after the the content of h1 in that selected tag.
+if we want to remove the element then:
+$("button").remove(); // it will remove all the button from the file.
+
+10- Website Animation with JQUERY:-
+if you want to hide,show,toggle,fadeIn,fadeOut ,slideUp,slideDown the selected element then: 
+$("h1").on("click",function(){
+    $("h1").hide(); or $("h1").show(); or $("h1").toggle(); or $("h1").fadeIn(); or $("h1").fadeOut(); or $("h1").fadeToggle(); 
+});
+if we want custom Animation then:
+$("button").on("click",function(){
+    $("h1").animate({opacity: 0.5});
+}); // in the animate({}) function we can only write the property whose value is in numeric i.e we cannt change the color using this.
+if we want to add three methods together then:
+$("button").on("click",function(){
+    $("h1").slideUp().slideDown().animate({opacity: 0.5});
+});
+
+
+
+
+
+
+
+
+
+
